@@ -107,6 +107,7 @@ body {
   border-radius: 50px;
   color:#0b1120;
   margin: left 0;
+  filter: grayscale(80%) contrast(120%);
 }
 
 @media (max-width: 900px) {
