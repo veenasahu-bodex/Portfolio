@@ -1,0 +1,95 @@
+.education {
+  width: 100%;
+  min-height: 100vh;
+  background: #101422;
+  padding: 100px 8%;
+}
+
+.education-container {
+  max-width: 1000px;
+  margin: auto;
+}
+
+.education h1 {
+  text-align: center;
+  font-size: 45px;
+  color: #e6e0e0;
+}
+
+.education p {
+  text-align: center;
+  color: #f7f2f2;
+  margin: 15px 0 50px;
+  font-size: 18px;
+}
+
+.timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.edu-card {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  background: rgb(235, 228, 228);
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0,0,0,.08);
+  transition: .3s;
+}
+
+.edu-card:hover {
+  transform: translateY(-5px);
+}
+
+.edu-icon {
+  width: 70px;
+  height: 70px;
+  background: #4F46E5;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+}
+
+.edu-content h2 {
+  color: #222;
+  margin-bottom: 8px;
+}
+
+.edu-content h4 {
+  color: #666;
+  margin-bottom: 15px;
+}
+
+.edu-info {
+  display: flex;
+  gap: 30px;
+  font-weight: bold;
+  color: #444;
+}
+
+@media (max-width:768px) {
+
+  .education {
+    padding: 70px 20px;
+  }
+
+  .education h1 {
+    font-size: 35px;
+  }
+
+  .edu-card {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .edu-info {
+    flex-direction: column;
+    gap: 10px;
+  }
+}

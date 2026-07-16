@@ -1,0 +1,125 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Inter, system-ui, sans-serif;
+  background: #0b1120;
+  color: #f5f7ff;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+.home-hero {
+  min-height: 100vh;
+  padding: 120px 40px 60px;
+  display: flex;
+  align-items: center;
+  background: radial-gradient(circle at top left, rgba(100, 255, 218, 0.18), transparent 40%),
+    linear-gradient(180deg, #0b1120 0%, #0b1120 100%);
+}
+
+.home-grid {
+  width: min(1120px, 100%);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 48px;
+  align-items: center;
+}
+
+.home-copy {
+  max-width: 620px;
+}
+
+.home-tagline {
+  color: #64ffda;
+  font-size: 16px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+}
+
+.home-title {
+  font-size: clamp(3rem, 5vw, 5rem);
+  line-height: 1.05;
+  margin-bottom: 24px;
+}
+
+.home-subtitle {
+  color: #cbd6f2;
+  font-size: 1.05rem;
+  line-height: 1.75;
+  margin-bottom: 36px;
+  max-width: 620px;
+}
+
+.home-actions {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 28px;
+  border-radius: 999px;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: transform 0.25s ease, background 0.25s ease;
+}
+
+.primary-btn {
+  background: #64ffda;
+  color: #0b1120;
+}
+
+.secondary-btn {
+  background: rgba(255, 255, 255, 0.08);
+  color: #f5f7ff;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.home-image-card {
+  display: flex;
+  justify-content: center;
+}
+
+.home-image-card img {
+  width: 100%;
+  max-width: 420px;
+  border-radius: 32px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.35);
+}
+
+@media (max-width: 900px) {
+  .home-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .home-hero {
+    padding-top: 140px;
+  }
+}
+
+@media (max-width: 640px) {
+  .home-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .btn {
+    width: 100%;
+  }
+}
