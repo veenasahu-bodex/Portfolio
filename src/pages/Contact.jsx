@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import axios from "axios";
 import "./contact.css";
 import {
   FaEnvelope,
@@ -9,6 +10,19 @@ import {
 } from "react-icons/fa";
 
 function Contact() {
+  const [contact, setContact] = useState({});
+
+useEffect(() => {
+  axios
+    .get("http://localhost:5000/api/contact")
+    .then((res) => {
+      setContact(res.data);
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+}, []);
+
   return (
     <section className="contact" id="contact">
       <div className="contact-container">
@@ -24,7 +38,7 @@ function Contact() {
               <FaEnvelope className="icon" />
               <div>
                 <h3>Email</h3>
-                <p>veenasahu310@gmail.com</p>
+                <p>{contact.email}</p>
               </div>
             </div>
 
@@ -32,7 +46,7 @@ function Contact() {
               <FaPhoneAlt className="icon" />
               <div>
                 <h3>Mobile</h3>
-                <p>+91 896608 7102</p>
+                <p>{contact.mobile}</p>
               </div>
             </div>
 
@@ -40,7 +54,7 @@ function Contact() {
               <FaMapMarkerAlt className="icon" />
               <div>
                 <h3>Address</h3>
-                <p>Rajnandgaon, Chhattisgarh, India</p>
+                <p>{contact.address}</p>
               </div>
             </div>
 

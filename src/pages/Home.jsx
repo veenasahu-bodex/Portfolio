@@ -1,12 +1,24 @@
 import veenaImage from "../assets/picture/image.jpg";
+import React, { useEffect, useState } from "react";
+import axios from "axios";
 
 function Home() {
+  const [contact, setContact] = useState({});
+
+  useEffect(() => {
+    axios
+      .get("http://localhost:5000/api/contact")
+      .then((res) => setContact(res.data))
+      .catch((err) => console.log(err));
+  }, []);
+
+
   return (
     <section id="home" className="home-hero">
       <div className="home-grid">
         <div className="home-copy">
           <p className="home-tagline">Hello, I'm</p>
-          <h1 className="home-title">Veena Sahu</h1>
+          <h1 className="home-title">{contact.name}</h1>
           
              <div className="about">
           <h1 className="about-heading">About Me</h1>
