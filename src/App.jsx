@@ -6,6 +6,7 @@ import Projects from "./pages/Projects";
 import "./App.css";
 import Education from "./pages/Education";
 import Contact from "./pages/Contact";
+
 function App() {
   return (
     <>
@@ -15,6 +16,7 @@ function App() {
       <Projects />
       <Education/>
       <Contact/>
+    
       
     </>
   );

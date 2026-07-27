@@ -14,13 +14,11 @@ function Contact() {
 
 useEffect(() => {
   axios
-    .get("http://localhost:5000/api/contact")
+    .get("https://portfolio-backend-ws00.onrender.com/api/contact")
     .then((res) => {
       setContact(res.data);
     })
-    .catch((err) => {
-      console.log(err);
-    });
+    .catch((err) => console.log(err));
 }, []);
 
   return (
