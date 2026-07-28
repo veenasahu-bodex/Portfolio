@@ -16,8 +16,9 @@ mongoose
 
 // Contact Routes
 const contactRoutes = require("./routes/contactRoutes");
-
+const messageRoutes = require("./routes/messageRoutes");
 app.use("/api/contact", contactRoutes);
+app.use("/api/messages", messageRoutes);
 
 app.get("/", (req, res) => {
   res.send("API Running...");
