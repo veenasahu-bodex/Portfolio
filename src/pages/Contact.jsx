@@ -11,6 +11,11 @@ import {
 
 function Contact() {
   const [contact, setContact] = useState({});
+  const [form, setForm] = useState({
+  name: "",
+  email: "",
+  description: "",
+});
 
 useEffect(() => {
   axios
@@ -20,6 +25,34 @@ useEffect(() => {
     })
     .catch((err) => console.log(err));
 }, []);
+
+const handleChange = (e) => {
+    setForm({
+      ...form,
+      [e.target.name]: e.target.value,
+    });
+  };
+const handleSubmit = async (e) => {
+  e.preventDefault();
+
+  try {
+    await axios.post(
+      "https://portfolio-backend-ws00.onrender.com/api/messages",
+      form
+    );
+
+    alert("Message Sent Successfully!");
+
+    setForm({
+      name: "",
+      email: "",
+      description: "",
+    });
+  } catch (err) {
+    console.log(err);
+    alert("Failed to send message");
+  }
+};
 
   return (
     <section className="contact" id="contact">
@@ -77,6 +110,43 @@ useEffect(() => {
               alt="Contact"
             />
           </div>
+          <div className="contact-form">
+       <h2>Send Message</h2>
+
+       <form onSubmit={handleSubmit}>
+       <input
+        type="text"
+        name="name"
+        placeholder="Enter Your Name"
+        value={form.name}
+        onChange={handleChange}
+        required
+       />
+
+       <input
+        type="email"
+        name="email"
+        placeholder="Enter Your Email"
+        value={form.email}
+        onChange={handleChange}
+        required
+       />
+
+       <textarea
+        name="description"
+        rows="6"
+        placeholder="Write Your Message"
+        value={form.description}
+        onChange={handleChange}
+        required
+       ></textarea>
+
+       <button type="submit" className="send-btn">
+        Send Message
+       </button>
+       </form>
+       </div>
+          
         </div>
       </div>
     </section>
